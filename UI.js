@@ -139,7 +139,6 @@ function UpdateUI(){
         text(Output[1][Output[1].length - 1].toUpperCase(), 22 + (Output[1].length - 1) * 30, 330);
       }
     }
-    pop();
 }
 
 function Clear(){
