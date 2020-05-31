@@ -223,7 +223,6 @@ function FSManagement(){
 
 function LockScreen(){
   if (Os != "IOS"){
-    fullscreen(true);
     screen.orientation.lock("portrait")
     .then(function() {
       console.log("Device orientation locked");
