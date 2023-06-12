@@ -1,4 +1,8 @@
-# Hangman-Helper (RU)
+# Hangman-Helper
+
+<p align="center">
+  <img width="370" alt="image" src="https://github.com/GregoryKogan/Hangman-Helper-RU/assets/60318411/6c695182-28bb-4c70-892f-13231c566a6b">
+</p>
 
 This is a little program, that should help you win in any hangman game.
 
