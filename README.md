@@ -19,5 +19,4 @@ with that word.
 
 You can try this out here: https://gregorykogan.github.io/Hangman-Helper-RU/
 
-It currently supports only Russian language. I would love to add English, but I need large enough frequency dictionary for that.
-If you find any, please send me a pull request with it, or contact me in some way.
+It currently supports only Russian language. 
