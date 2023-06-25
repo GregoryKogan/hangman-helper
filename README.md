@@ -1,7 +1,7 @@
 # hangman-helper
 
 <p align="center">
-  <img width="370" alt="image" src="https://github.com/GregoryKogan/Hangman-Helper-RU/assets/60318411/6c695182-28bb-4c70-892f-13231c566a6b">
+  <img width="370" alt="image" src="https://github.com/GregoryKogan/hangman-helper/assets/60318411/59d190ff-8cf1-438a-af28-8f102157b0d5">
 </p>
 
 This is a little program, that should help you win in any hangman game.
@@ -17,6 +17,6 @@ Simirarly used letters can be also separated with any symbol or sequence of symb
 If you notice lack of some frequent word, it would be nice of you, if you send me a pull request
 with that word.
 
-You can try this out here: https://gregorykogan.github.io/Hangman-Helper-RU/
+You can try this out here: https://gregorykogan.github.io/hangman-helper/
 
 It currently supports only Russian language. 
