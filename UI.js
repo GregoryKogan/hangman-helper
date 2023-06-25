@@ -31,7 +31,7 @@ function SetUpUI(){
   SubmitButton.style('background-color', ButtonColor);
   SubmitButton.style('color', 'white');
   SubmitButton.style('font-family', 'Roboto-Thin');
-  SubmitButton.mousePressed(SubmitData);
+  SubmitButton.mousePressed(submit);
 
   ClearButton = createButton("Очистить");
   ClearButton.style('font-size', '20px');
@@ -61,20 +61,19 @@ function UpdateUI(){
   pop();
 
   if (Os != "IOS"){
-    if (fullscreen() != undefined)
+    if (fullscreen() != undefined) {
       FullScreenButton.html("><");
-    else
+    } else {
       FullScreenButton.html("<>");
+    }
   }
 
-  if (WordInput.value() == "")
+  if (WordInput.value() == "") {
     MakeWhite();
+  }
   if (Device == "Laptop"){
     let Width = 0;
-    if (windowWidth < 1052)
-      Width = 1052;
-    else
-      Width = windowWidth;
+    Width = Math.max(windowWidth, 1052)
     push();
     stroke(246, 202, 9);
     strokeWeight(3);
@@ -147,10 +146,11 @@ function UpdateUI(){
       text("Возможно это слово -", 20, 370);
       if (Output && Output[0].length > 0){
         let ColumnWidth;
-        if (Output[0].length == 1)
+        if (Output[0].length == 1) {
           ColumnWidth = 5;
-        else
+        } else {
           ColumnWidth = (130 / 7) * (Output[0][0].length);
+        }
         let Columns = (Width / ColumnWidth);
         let Rows = (windowHeight - 400) / ((423) / 14);
         textFont(ThiccFont);
@@ -183,7 +183,6 @@ function Clear(){
   WordInput.value("");
   UsedLettersInput.value("");
   MakeWhite();
-  LockScreen();
   Output = undefined;
 }
 
@@ -203,10 +202,11 @@ function CapitalFirst(Word){
 }
 
 function DetectDevice(){
-  if (min(displayWidth / 4.29, displayHeight / 4.29) >= 150)
+  if (min(displayWidth / 4.29, displayHeight / 4.29) >= 150) {
     Device = "Laptop";
-  else
+  } else {
     Device = "Phone";
+  }
   if (navigator.userAgent.indexOf("like Mac") != -1){
     Os = "IOS";
     Device = "Phone";
@@ -214,10 +214,11 @@ function DetectDevice(){
 }
 
 function windowResized(){
-  if (Device == "Laptop")
+  if (Device == "Laptop") {
     resizeCanvas(windowWidth - 5, windowHeight - 5);
-  else
+  } else {
     resizeCanvas(windowWidth + 1, windowHeight + 1);
+  }
   UpdateUI();
 }
 
@@ -233,25 +234,10 @@ function FSManagement(){
   }
 }
 
-function LockScreen(){
-  if (Os != "IOS"){
-    screen.orientation.lock("portrait")
-    .then(function() {
-      console.log("Device orientation locked");
-    })
-    .catch(function(error) {
-      console.log("Unable to lock screen on this device");
-    });
-  }
-}
-
 function UpdateUIPos(){
   if (Device == "Laptop"){
     let Width = 0;
-    if (windowWidth < 1052)
-      Width = 1052;
-    else
-      Width = windowWidth;
+    Width = Math.max(windowWidth, 1052)
     WordInput.position(Width / 2 - Width / 6, 70);
     WordInput.size(Width / 3, 30);
 
