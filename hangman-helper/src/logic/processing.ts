@@ -58,12 +58,8 @@ export const countLetters = (words: string[]) => {
     return letters;
 }
 
-export const get10BestLetters = (letters: {[key: string]: number}) => {
-    let bestLetters = [];
-    for (let i = 0; i < 10; ++i){
-        let bestLetter = Object.keys(letters).reduce((a, b) => letters[a] > letters[b] ? a : b);
-        bestLetters.push(bestLetter);
-        delete letters[bestLetter];
-    }
-    return bestLetters;
+export const get10BestLetters = (letters: {[key: string]: number}, word: string) => {
+    let bestLetters = Object.keys(letters).filter(letter => !word.includes(letter));
+    bestLetters.sort((a, b) => letters[b] - letters[a]);
+    return bestLetters.slice(0, 10);
 }

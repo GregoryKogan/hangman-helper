@@ -66,7 +66,7 @@ export default defineComponent({
         return;
       };
       this.words = sortByFrequency(matchingWords, this.dictionary);
-      this.letters = get10BestLetters(countLetters(this.words));
+      this.letters = get10BestLetters(countLetters(this.words), word);
     },
   },
   async created() {
