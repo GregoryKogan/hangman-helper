@@ -35,7 +35,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { loadData, parseLetters, parseWord, matchWords, sortByFrequency, countLetters, get10BestLetters } from "@/logic/processing";
+import { loadData, parseLetters, parseWord, matchWords, countLetters, get10BestLetters } from "@/logic/processing";
 
 export default defineComponent({
   name: "HomeView",
@@ -43,7 +43,7 @@ export default defineComponent({
     wordInput: "",
     lettersInput: "",
 
-    dictionary: {} as {[key: string]: number},
+    dictionary: [] as string[],
     letters: [] as string[],
     words: [] as string[],
   }),
@@ -59,13 +59,12 @@ export default defineComponent({
 
       let word = parseWord(this.wordInput);
       let bannedLetters = parseLetters(this.lettersInput);
-      let matchingWords = matchWords(word, bannedLetters, Object.keys(this.dictionary));
-      if (matchingWords.length == 0) {
+      this.words = matchWords(word, bannedLetters, this.dictionary);
+      if (this.words.length == 0) {
         this.letters = [];
         this.words = ["А я, кажется, не знаю таких слов..."];
         return;
       };
-      this.words = sortByFrequency(matchingWords, this.dictionary);
       this.letters = get10BestLetters(countLetters(this.words), word);
     },
   },

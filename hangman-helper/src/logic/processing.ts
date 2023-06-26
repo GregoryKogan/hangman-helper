@@ -1,16 +1,8 @@
 const ALPHABET = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя"
 
 export const loadData = async () => {
-    let dictionary: {[key: string]: number} = {};
-
-    const data = (await (await fetch("words.txt")).text()).toString();
-    let wordLines = data.split("\n");
-    wordLines.forEach(wordLine => {
-        let wordData = wordLine.split(" ");
-        dictionary[wordData[0]] = parseInt(wordData[wordData.length - 1]); 
-    });
-    
-    return dictionary;
+    const data = (await (await fetch("words.txt")).text()).toString(); 
+    return data.split("\n");
 }
 
 export const parseWord = (wordInput: string) => {
@@ -36,11 +28,6 @@ export const matchWords = (word: string, bannedLetters: string, dictionary: stri
         }
         return true;
     });
-    return matchingWords;
-}
-
-export const sortByFrequency = (matchingWords: string[], dictionary: {[key: string]: number}) => {
-    matchingWords.sort((a, b) => dictionary[b] - dictionary[a]);
     return matchingWords;
 }
 
