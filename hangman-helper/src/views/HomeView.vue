@@ -35,7 +35,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { loadData, parseLetters, parseWord, matchWords, countLetters, get10BestLetters } from "@/logic/processing";
+import { loadData, parseLetters, parseWord, matchWords, countLetters, get10BestLetters, extendBannedLetters } from "@/logic/processing";
 
 export default defineComponent({
   name: "HomeView",
@@ -59,6 +59,7 @@ export default defineComponent({
 
       let word = parseWord(this.wordInput);
       let bannedLetters = parseLetters(this.lettersInput);
+      bannedLetters = extendBannedLetters(bannedLetters, word);
       this.words = matchWords(word, bannedLetters, this.dictionary);
       if (this.words.length == 0) {
         this.letters = [];
