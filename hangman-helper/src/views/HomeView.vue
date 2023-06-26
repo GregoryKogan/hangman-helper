@@ -31,10 +31,16 @@
             <p align="left"> {{ words.map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(', ') }}</p>
         </v-container>
         <v-btn
-        fab
-        >
-
-        </v-btn>
+        @click="goToRepo"
+        position="fixed"
+        location="bottom right"
+        icon="mdi-github"
+        density="compact"
+        size="x-large"
+        variant="flat"
+        color="#1a1b26"
+        style="margin: 10px;"
+        ></v-btn>
     </div>
 </template>
 
@@ -72,6 +78,9 @@ export default defineComponent({
         return;
       };
       this.letters = get10BestLetters(countLetters(this.words), word);
+    },
+    goToRepo() {
+      window.open("https://github.com/GregoryKogan/hangman-helper", '_blank')!.focus();
     },
   },
   async created() {
