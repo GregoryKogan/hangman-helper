@@ -24,19 +24,22 @@ export const extendBannedLetters = (bannedLetters: Set<string>, word: string) =>
     return bannedLetters;
 }
 
-export const matchWords = (word: string, bannedLetters: Set<string>, dictionary: string[]) => {
-    let matchingWords = dictionary.filter(guess => guess.length == word.length);
-    matchingWords = matchingWords.filter(guess => {
-        for (let i = 0; i < word.length; ++i){
-            if (word[i] != '_' && word[i] != guess[i]) {
-                return false;
-            } else if (word[i] == '_' && bannedLetters.has(guess[i])) {
-                return false;
+export const matchWords = (word: string, bannedLetters: Set<string>, dictionary: string[]) => {    
+    return dictionary.filter(dictWord => {
+            if (dictWord.length != word.length) {
+              return false;
             }
-        }
-        return true;
-    });
-    return matchingWords;
+
+            for (let i = 0; i < word.length; ++i){
+                if (
+                    (word[i] != '_' && word[i] != dictWord[i]) || 
+                    (word[i] == '_' && bannedLetters.has(dictWord[i]))
+                    ) {
+                    return false;
+                }
+            }
+            return true;
+        });
 }
 
 export const countLetters = (words: string[]) => {
