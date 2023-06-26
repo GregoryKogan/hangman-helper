@@ -1,7 +1,7 @@
 # hangman-helper
 
 <p align="center">
-  <img width="370" alt="image" src="https://github.com/GregoryKogan/hangman-helper/assets/60318411/59d190ff-8cf1-438a-af28-8f102157b0d5">
+  <img width="366" alt="image" src="https://github.com/GregoryKogan/hangman-helper/assets/60318411/9ae32469-f47b-4f78-9440-0896b22ca4ce">
 </p>
 
 This is a little program, that should help you win in any hangman game.
