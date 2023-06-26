@@ -30,6 +30,11 @@
             <h3 v-if="words.length > 0" style="margin-top: 10px;" align="left">Возможно это слово:</h3>
             <p align="left"> {{ words.map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(', ') }}</p>
         </v-container>
+        <v-btn
+        fab
+        >
+
+        </v-btn>
     </div>
 </template>
 
