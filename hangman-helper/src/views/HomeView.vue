@@ -8,6 +8,8 @@
         class="border-opacity-100"
       ></v-divider>
       <v-text-field
+        @change="submit"
+        @click:clear="submit"
         clearable
         variant="outlined"
         :label="
@@ -21,6 +23,8 @@
       >
       </v-text-field>
       <v-text-field
+        @change="submit"
+        @click:clear="submit"
         clearable
         variant="outlined"
         label="Использованные буквы"
@@ -33,16 +37,13 @@
         class="border-opacity-100"
       ></v-divider>
     </v-container>
-    <v-row justify="space-around" style="margin: 5px; width: 100%">
-      <v-btn @click="submit" color="#414868">Подтвердить</v-btn>
-    </v-row>
     <v-container>
       <h3 v-if="letters.length > 0" align="left">Попробуйте буквы:</h3>
-      <v-row style="padding-top: 20px; padding-bottom: 10px;">
+      <v-row style="padding-top: 20px; padding-bottom: 10px">
         <v-chip
           v-for="letter in letters"
           size="x-large"
-          style="margin-left: 10px; margin-bottom: 10px;"
+          style="margin-left: 10px; margin-bottom: 10px"
         >
           <b>{{ letter.toUpperCase() }}</b>
         </v-chip>
@@ -94,10 +95,9 @@
           Это приложение поможет вам в игре <b>"Виселица"</b>. Введите
           загаданное слово в поле <b>"Ваше слово"</b>, заменяя неизвестные буквы
           на любой другой символ. А в поле <b>"Использованные буквы"</b> укажите
-          буквы, которые вы уже назвали, но которых нет в слове. После нажатия
-          на кнопку <b>"Подтвердить"</b> вам будут предложены буквы, которые,
-          возможно, есть в загаданном слове, а также слова, которые могут быть
-          загаданы. <b>Приятной игры!</b>
+          буквы, которые вы уже назвали, но которых нет в слове. Вам будут
+          предложены буквы, которые, возможно, есть в загаданном слове, а также
+          слова, которые могут быть загаданы. <b>Приятной игры!</b>
         </v-card-text>
       </v-card>
     </v-dialog>
