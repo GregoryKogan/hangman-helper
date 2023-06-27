@@ -16,4 +16,4 @@ Simirarly used letters can be also separated with any symbol or sequence of symb
 
 You can try this out here: https://gregorykogan.github.io/hangman-helper/
 
-It currently supports only Russian language. 
+*It currently supports only Russian language*
