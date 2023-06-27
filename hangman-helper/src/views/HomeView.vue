@@ -1,6 +1,6 @@
 <template>
   <div class="col">
-    <h1 style="margin-bottom: 5px; margin-top: 15px">Hangman Helper</h1>
+    <h1 style="margin-bottom: 5px; margin-top: 15px">Помощник висельника</h1>
     <v-container>
       <v-divider
         :thickness="5"
@@ -150,9 +150,7 @@ export default defineComponent({
       this.letters = get10BestLetters(countLetters(this.words), word);
     },
     goToRepo() {
-      window
-        .open("https://github.com/GregoryKogan/hangman-helper", "_blank")!
-        .focus();
+      window.open("https://github.com/GregoryKogan/hangman-helper", "_blank");
     },
   },
   async created() {
