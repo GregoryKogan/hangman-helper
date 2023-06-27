@@ -1,6 +1,6 @@
 # помощник-висельника
 
-[![EN](https://img.shields.io/badge/language-English-blue.svg)](https://github.com/GregoryKogan/hangman-helper/blob/3ab61a60572163dac40c5cf4037a13c2bd915b6f/README.md)
+[![EN](https://img.shields.io/badge/language-English-blue.svg)](https://github.com/GregoryKogan/hangman-helper/blob/master/README.md)
 
 <p align="center">
   <img width="573" alt="image" src="https://github.com/GregoryKogan/hangman-helper/assets/60318411/9ba07b31-2ac8-4b03-bdc0-0a7447b85253">
