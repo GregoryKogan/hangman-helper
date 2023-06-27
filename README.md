@@ -1,6 +1,6 @@
 # hangman-helper
 
-[![RU](https://img.shields.io/badge/language-Russian-blue.svg)](https://github.com/GregoryKogan/hangman-helper/blob/ef4d5d839053019c776427dc13239173ae650f19/README-RU.md)
+[![RU](https://img.shields.io/badge/language-Russian-blue.svg)](https://github.com/GregoryKogan/hangman-helper/blob/master/README-RU.md)
 
 <p align="center">
   <img width="573" alt="image" src="https://github.com/GregoryKogan/hangman-helper/assets/60318411/9ba07b31-2ac8-4b03-bdc0-0a7447b85253">
