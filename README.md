@@ -1,7 +1,9 @@
 # hangman-helper
 
+[![RU](https://img.shields.io/badge/language-Russian-blue.svg)](https://github.com/GregoryKogan/hangman-helper/blob/master/README-RU.md)
+
 <p align="center">
-  <img width="366" alt="image" src="https://github.com/GregoryKogan/hangman-helper/assets/60318411/9ae32469-f47b-4f78-9440-0896b22ca4ce">
+  <img width="573" alt="image" src="https://github.com/GregoryKogan/hangman-helper/assets/60318411/9ba07b31-2ac8-4b03-bdc0-0a7447b85253">
 </p>
 
 This is a little program, that should help you win in any hangman game.
@@ -14,4 +16,4 @@ Simirarly used letters can be also separated with any symbol or sequence of symb
 
 You can try this out here: https://gregorykogan.github.io/hangman-helper/
 
-It currently supports only Russian language. 
+*It currently supports only Russian language*
