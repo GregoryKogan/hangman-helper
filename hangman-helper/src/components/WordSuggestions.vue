@@ -19,7 +19,7 @@
 import { defineComponent } from "vue";
 
 export default defineComponent({
-  name: "Suggestions",
+  name: "WordSuggestions",
   props: {
     letters: {
       type: Array<string>,
