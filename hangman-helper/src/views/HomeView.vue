@@ -2,89 +2,26 @@
   <div class="col">
     <h1 style="margin-bottom: 5px; margin-top: 15px">Помощник висельника</h1>
     <v-container>
-      <v-divider
-        :thickness="5"
-        color="#bb9af7"
-        class="border-opacity-100"
-      ></v-divider>
-      <v-text-field
-        @change="submit"
-        @click:clear="submit"
-        clearable
-        variant="outlined"
-        :label="
-          wordInput != null && wordInput.length > 0
-            ? 'Длина: ' + wordInput.length.toString()
-            : 'Ваше слово'
-        "
-        placeholder="Гид__э_ек___с__нция"
-        style="margin-top: 20px"
-        v-model="wordInput"
-      >
+      <v-divider :thickness="5" color="#bb9af7" class="border-opacity-100"></v-divider>
+      <v-text-field @change="submit" @click:clear="submit" clearable variant="outlined" :label="wordInput != null && wordInput.length > 0
+          ? 'Длина: ' + wordInput.length.toString()
+          : 'Ваше слово'
+        " placeholder="Гид__э_ек___с__нция" style="margin-top: 20px" v-model="wordInput">
       </v-text-field>
-      <v-text-field
-        @change="submit"
-        @click:clear="submit"
-        clearable
-        variant="outlined"
-        label="Использованные буквы"
-        placeholder="з, б, в, у, ш, ж"
-        v-model="lettersInput"
-      ></v-text-field>
-      <v-divider
-        :thickness="5"
-        color="#bb9af7"
-        class="border-opacity-100"
-      ></v-divider>
+      <v-text-field @change="submit" @click:clear="submit" clearable variant="outlined" label="Использованные буквы"
+        placeholder="з, б, в, у, ш, ж" v-model="lettersInput"></v-text-field>
+      <v-divider :thickness="5" color="#bb9af7" class="border-opacity-100"></v-divider>
     </v-container>
-    <v-container>
-      <h3 v-if="letters.length > 0" align="left">Попробуйте буквы:</h3>
-      <v-row style="padding-top: 20px; padding-bottom: 10px">
-        <v-chip
-          v-for="letter in letters"
-          size="x-large"
-          style="margin-left: 10px; margin-bottom: 10px"
-        >
-          <b>{{ letter.toUpperCase() }}</b>
-        </v-chip>
-      </v-row>
-      <h3 v-if="words.length > 0" style="margin-top: 10px" align="left">
-        Возможно это слово:
-      </h3>
-      <p align="left">
-        {{
-          words.map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(", ")
-        }}
-      </p>
-    </v-container>
-    <v-card
-      style="padding: 15px"
-      variant="flat"
-      position="fixed"
-      location="bottom right"
-      color="#00000000"
-    >
+    <Suggestions :letters="letters" :words="words"></Suggestions>
+    <v-card style="padding: 15px" variant="flat" position="fixed" location="bottom right" color="#00000000">
       <v-container>
         <v-row>
-          <v-btn
-            @click="helpDialog = true"
-            icon="mdi-help"
-            density="compact"
-            size="x-large"
-            variant="flat"
-            color="#1a1b26"
-            style="margin-bottom: 10px"
-          ></v-btn>
+          <v-btn @click="helpDialog = true" icon="mdi-help" density="compact" size="x-large" variant="flat"
+            color="#1a1b26" style="margin-bottom: 10px"></v-btn>
         </v-row>
         <v-row>
-          <v-btn
-            @click="goToRepo"
-            icon="mdi-github"
-            density="compact"
-            size="x-large"
-            variant="flat"
-            color="#1a1b26"
-          ></v-btn>
+          <v-btn @click="goToRepo" icon="mdi-github" density="compact" size="x-large" variant="flat"
+            color="#1a1b26"></v-btn>
         </v-row>
       </v-container>
     </v-card>
@@ -106,6 +43,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import Suggestions from "@/components/Suggestions.vue";
 import {
   loadData,
   parseLetters,
@@ -118,6 +56,9 @@ import {
 
 export default defineComponent({
   name: "HomeView",
+  components: {
+    Suggestions,
+  },
   data: () => ({
     wordInput: "",
     lettersInput: "",
